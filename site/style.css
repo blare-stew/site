@@ -102,3 +102,17 @@ article {
 small {
   font-size: 10px;
 }
+
+.friend {
+  display: flex;
+  align-items: center;
+}
+
+.friend .avatar {
+  width: 100px!important;
+}
+
+.friend .description {
+  flex: 1;
+  padding-left: 10px;
+}
