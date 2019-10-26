@@ -1,42 +1,12 @@
 {
-  "name": "site2",
+  "name": "site",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "three": "^0.109.0",
-    "vue": "^2.6.10",
-    "vue-hot-reload-api": "^2.3.4"
+  "scripts": {
+    "start": "serve site",
+    "deploy": "surge site blarestew.surge.sh"
   },
   "devDependencies": {
-    "@vue/component-compiler-utils": "^3.0.0",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-prerender": "^1.4.1",
-    "parcel-plugin-static-files-copy": "^2.2.1",
-    "surge": "^0.21.3",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "prebuild": "node tools/build.js",
-    "deploy": "surge dist blarestew.surge.sh"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/blare-stew/site2.git"
-  },
-  "author": "David Konsumer <konsumer@jetboystudio.com> (http://konsumer.js.org)",
-  "homepage": "https://blarestew.com",
-  "staticFiles": {
-    "staticPath": [
-      {
-        "staticPath": "static",
-        "staticOutDir": ""
-      }
-    ]
-  },
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
+    "serve": "^11.2.0",
+    "surge": "^0.21.3"
   }
 }

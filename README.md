@@ -1,19 +1,9 @@
-# site
+# blarestew
 
-Published [here](https://blarestew.surge.sh).
+This is the source for Blare Stew website.
 
-You can edit pages in `pages/`. They are [vue components](https://vuejs.org/).
+It is deployed [here](https://blarestew.surge.sh).
 
-Anything you put in `static/` will show up at webroot.
+Edit files in [site/](./site).
 
-
-## development
-
-```
-npm i          # install tools
-
-npm start      # run development server
-npm run build  # build site
-npm run deploy # deploy site
-```
-
+The source-code for space-effects is in [space/](./space).
