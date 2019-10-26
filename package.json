@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "three": "^0.109.0"
+    "three": "^0.109.0",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
-    "parcel": "^1.12.4",
+    "@vue/component-compiler-utils": "^3.0.0",
+    "parcel-bundler": "^1.12.4",
     "parcel-plugin-prerender": "^1.4.1",
-    "parcel-plugin-static-files-copy": "^2.2.1"
+    "parcel-plugin-static-files-copy": "^2.2.1",
+    "surge": "^0.21.3",
+    "vue-template-compiler": "^2.6.10"
   },
   "scripts": {
     "start": "parcel index.html",
@@ -30,5 +35,8 @@
         "staticOutDir": ""
       }
     ]
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }
