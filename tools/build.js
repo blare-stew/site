@@ -1,0 +1,3 @@
+/*
+This gets run before build to generate a list of static files
+ */
