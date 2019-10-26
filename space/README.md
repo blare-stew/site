@@ -11,7 +11,7 @@ Use them like this:
 or
 
 ```
-<script src="/space/can.js"></script>
+<script src="/space/bear.js"></script>
 ```
 
 It must be in a web subdirectory `/space`.
