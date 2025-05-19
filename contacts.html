@@ -4,16 +4,24 @@
   </title>
   <link rel="stylesheet" href="style.css"/>
   <style>
+    .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 0;
+    }
+
     .social-icons img {
-      width: 40px; /* Adjust icon size */
-      height: 40px;
-      margin: 10px;
-      vertical-align: middle;
-      transition: transform 0.2s ease;
+      width: 120px;
+      height: 120px;
+      opacity: 0.85;
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     .social-icons img:hover {
       transform: scale(1.15);
+      opacity: 1;
     }
   </style>
 </head>
@@ -43,10 +51,10 @@
       <img src="images/Patreon_Icon.png" alt="Patreon">
     </a>
     <a href="https://www.instagram.com/blarestew/" target="_blank">
-      <img src="images/Instagram_Icon.png" alt="Instagram">
+      <img src="images/Instragram_icon.png" alt="Instagram">
     </a>
     <a href="https://X.com/BlareStew" target="_blank">
-      <img src="images/X_Icon.png" alt="X (formerly Twitter)">
+      <img src="images/X_Icon.png" alt="X">
     </a>
     <a href="https://twitch.com/BlareStew" target="_blank">
       <img src="images/Twitch_Icon.png" alt="Twitch">
