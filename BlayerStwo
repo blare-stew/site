@@ -9,7 +9,71 @@
 </head>
 <body>
   <div id="app">
+    <header><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blare Stew</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: black;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 1rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #app img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
     <header>
+      <h1><a href="/">BLARE!!! StEW??</a></h1>
+      <nav>
+        <a href="/about.html">ABOUt!!!</a>
+        <a href="/reviews.html">REVIEWS!!!</a>
+        <a href="/faq.html">FAQS!!!</a>
+        <a href="/space">SPACE!!!</a>
+        <a href="/video">VIDEO!!</a>
+        <a href="https://soundcloud.com/BLARESTEW" target="_blank">MUSIC!!!</a>
+        <a href="https://www.etsy.com/shop/BLARESTEW" target="_blank">MERCH!!!</a>
+        <a href="/contacts">CONtACtS!!!</a>
+        <a href="/friends">&amp;FRIENDS!!!</a>
+      </nav>
+    </header>
+
+    <img src="/images/BlayerStwo.png" alt="BlayerStwo" />
+  </div>
+</body>
+</html>
+
       <h1><a href="/">BLARE!!! StEW??</a></h1>
       <nav>
         <a href="/about.html">About</a>
