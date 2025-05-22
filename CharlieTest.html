@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Conspiracy Board</title>
-  <link rel="stylesheet" href="./style.css"/>
-  <link rel="icon" href="/favicon.ico"/>
+  <title>Sol Blear's Conspiracy Board</title>
   <style>
     body {
       margin: 0;
-      background: url('/images/Sol Blear-ConspiracyBoardWBackground.png') no-repeat center center fixed;
+      background: url('/images/corkboard.png') no-repeat center center fixed;
       background-size: cover;
-      font-family: sans-serif;
       overflow: hidden;
     }
 
@@ -19,8 +16,9 @@
       position: absolute;
       bottom: 2%;
       left: 2%;
-      width: 100px; /* adjust size here */
+      width: 120px;
       cursor: pointer;
+      z-index: 10;
       transition: transform 0.2s ease-in-out;
     }
 
@@ -30,37 +28,31 @@
 
     .hotspot {
       position: absolute;
-      width: 80px;
-      height: 80px;
-      border: 2px dashed rgba(255, 0, 0, 0.3);
+      width: 100px;
+      height: 100px;
+      border: 2px dashed rgba(255, 0, 0, 0.2);
       border-radius: 8px;
       cursor: pointer;
+      z-index: 5;
     }
 
-    /* Example clickable hotspot */
     #link1 {
       top: 20%;
       left: 60%;
     }
 
     #link2 {
-      top: 50%;
+      top: 40%;
       left: 30%;
     }
-
-    /* Add more hotspots as needed */
   </style>
 </head>
 <body>
-
-  <!-- Clickable mascot -->
-  <a href="/" id="solBlear" title="Return to Home">
-    <img src="/images/Sol Blear-ConspiracyBoardWBackground.png" alt="Sol Blear"/>
+  <a href="/" id="solBlear">
+    <img src="/images/Sol Blear-Conspiracy Board.png" alt="Sol Blear">
   </a>
 
-  <!-- Example hotspots on the board (more to come) -->
-  <div id="link1" class="hotspot" onclick="window.location.href='/episode1.html'" title="EPISODE 1"></div>
-  <div id="link2" class="hotspot" onclick="window.location.href='/episode2.html'" title="EPISODE 2"></div>
-
+  <div id="link1" class="hotspot" onclick="window.location.href='/episode1.html'"></div>
+  <div id="link2" class="hotspot" onclick="window.location.href='/episode2.html'"></div>
 </body>
 </html>
