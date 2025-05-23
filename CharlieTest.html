@@ -7,52 +7,79 @@
   <style>
     body {
       margin: 0;
-      background: url('/images/corkboard.png') no-repeat center center fixed;
+      background: url('corkboard.png') no-repeat center center fixed;
       background-size: cover;
-      overflow: hidden;
+      font-family: 'Courier New', Courier, monospace;
+      color: #fff;
     }
 
-    #solBlear {
-      position: absolute;
-      bottom: 2%;
-      left: 2%;
-      width: 120px;
-      cursor: pointer;
-      z-index: 10;
-      transition: transform 0.2s ease-in-out;
+    header {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    #solBlear:hover {
-      transform: scale(0.5);
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 900;
     }
 
-    .hotspot {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      border: 2px dashed rgba(255, 0, 0, 0.2);
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 5;
+    header h1 a {
+      text-decoration: none;
+      color: #ffcc00;
     }
 
-    #link1 {
-      top: 20%;
-      left: 60%;
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
     }
 
-    #link2 {
-      top: 40%;
-      left: 30%;
+    nav a {
+      text-decoration: none;
+      color: #00ffff;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
-  <a href="/" id="solBlear">
-    <img src="/images/Sol Blear-ConspiracyBoard.png" alt="Sol Blear">
-  </a>
 
-  <div id="link1" class="hotspot" onclick="window.location.href='/episode1.html'"></div>
-  <div id="link2" class="hotspot" onclick="window.location.href='/episode2.html'"></div>
+  <header>
+    <h1><a href='/'>BLARE!!! StEW??</a></h1>
+    <nav>
+      <a href="/about.html">ABOUt!!!</a>
+      <a href="/reviews.html">REVIEWS!!!</a>
+      <a href="/faq">FAQS!!!</a>
+      <a href="/space">SPACE!!!</a>
+      <a href="/video">VIDEO!!</a>
+      <a href="https://soundcloud.com/BLARESTEW">MUSIC!!!</a>
+      <a href="https://www.etsy.com/shop/BLARESTEW">MERCH!!!</a>
+      <a href="/contacts">CONtACtS!!!</a>
+      <a href="/friends">&amp;FRIENDS!!!</a>
+    </nav>
+  </header>
+
+  <main>
+    <p>Welcome to the classified meming operation. Stay paranoid.</p>
+  </main>
+
 </body>
 </html>
