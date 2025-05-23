@@ -3,83 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sol Blear’s Conspiracy Board</title>
+  <title>Conspiracy Board</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Courier New', Courier, monospace;
-      background: url('corkboard.png') no-repeat center center fixed;
+      padding: 0;
+      font-family: sans-serif;
+      background: url('images/corkboard.png') no-repeat center center fixed;
       background-size: cover;
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.8);
       padding: 1rem;
-      text-align: center;
-      position: relative;
-      z-index: 10;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header h1 a {
-      text-decoration: none;
-      color: #FFD700;
-    }
-
-    nav {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
+      background: white;
     }
 
     nav a {
-      color: #00ffff;
-      background-color: rgba(0, 0, 0, 0.4);
-      text-decoration: none;
-      padding: 0.5rem 0.75rem;
-      border-radius: 5px;
+      margin-right: 1rem;
+    }
+
+    .board-container {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 120px); /* Leave room for header */
+      overflow: hidden;
+    }
+
+    .sol-blear-link {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: 16.66%; /* About 1/6th of the width */
+      z-index: 2;
+    }
+
+    .sol-blear-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Empty note placeholders */
+    .note {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: yellow;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      padding: 1rem;
       font-weight: bold;
     }
 
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .board {
-      position: relative;
-      padding: 2rem;
-    }
-
-    .bear {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      width: 150px;
-      height: auto;
-      z-index: 1;
-    }
-
-    .note {
-      background: yellow;
-      padding: 1rem;
-      position: absolute;
-      transform: rotate(-3deg);
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Example note positions */
-    .note1 { top: 200px; left: 50px; }
-    .note2 { top: 300px; left: 200px; }
+    .note1 { top: 100px; left: 200px; }
+    .note2 { top: 300px; left: 500px; }
+    /* Add more note classes as needed */
   </style>
 </head>
 <body>
 
+  <!-- ✅ Header exactly as given -->
   <header>
     <h1><a href='/'>BLARE!!! StEW??</a></h1>
     <nav>
@@ -95,13 +77,18 @@
     </nav>
   </header>
 
-  <div class="board">
-    <!-- Static Bear Image -->
-    <img src="images/Sol Blear-ConspiracyBoard.png" alt="Sol Blear" class="Blear">
+  <!-- ✅ Board with background and bear -->
+  <div class="board-container">
 
-    <div class="note note1">SECRET #1</div>
-    <div class="note note2">They’re watching...</div>
-    <!-- Add more .note divs with .noteX classes -->
+    <!-- Sol Blear clickable image -->
+    <a href="/sol-blear.html" class="sol-blear-link">
+      <img src="images/Sol Blear-ConspiracyBoard.png" alt="Sol Blear">
+    </a>
+
+    <!-- Empty note placeholders -->
+    <div class="note note1">[BLANK]</div>
+    <div class="note note2">[BLANK]</div>
+
   </div>
 
 </body>
