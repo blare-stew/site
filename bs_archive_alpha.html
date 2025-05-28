@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TOP SECRET: Blare Stew Resume Access</title>
+  <style>
+    body {
+      background: #000;
+      color: #39ff14;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.2em;
+      max-width: 500px;
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      font-size: 1.1em;
+      background: #111;
+      color: #39ff14;
+      border: 2px solid #39ff14;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      margin-top: 10px;
+      background: #39ff14;
+      color: #000;
+      border: none;
+      cursor: pointer;
+    }
+    #resume-link {
+      margin-top: 30px;
+    }
+    a {
+      color: #ff00ff;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔐 TOP SECRET ACCESS</h1>
+  <p>
+    Welcome, Agent.<br>
+    You have reached the restricted archive of Blare Stew.<br>
+    Enter the authorized access code to retrieve the dossier.
+  </p>
+
+  <input type="password" id="password" placeholder="Enter Access Code">
+  <button onclick="revealLink()">Access Dossier</button>
+
+  <div id="resume-link"></div>
+
+  <script>
+    function revealLink() {
+      const code = document.getElementById('password').value;
+      if (code === '444444') {
+        const link = document.createElement('a');
+        link.href = 'https://drive.google.com/file/d/XXXXXXXXXXXX/view?usp=sharing'; // Replace with your Google Drive link
+        link.target = '_blank';
+        link.innerText = '📝 Open Blare Stew Resume';
+        document.getElementById('resume-link').appendChild(link);
+      } else {
+        alert('Access Denied. Invalid code.');
+      }
+    }
+  </script>
+
+</body>
+</html>
