@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>TOP SECRET: Blare Stew Access</title>
   <style>
     body {
@@ -11,19 +11,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      min-height: 100vh;
       margin: 0;
       padding: 20px;
     }
     h1 {
       font-size: 2em;
       margin-bottom: 0.5em;
+      text-align: center;
     }
     p {
       font-size: 1.2em;
       max-width: 500px;
       text-align: center;
+      line-height: 1.4;
     }
     input {
       padding: 10px;
@@ -32,6 +34,8 @@
       color: #39ff14;
       border: 2px solid #39ff14;
       margin-top: 20px;
+      width: 220px;
+      text-align: center;
     }
     button {
       padding: 10px 20px;
@@ -41,13 +45,17 @@
       color: #000;
       border: none;
       cursor: pointer;
+      width: 120px;
+      font-weight: bold;
     }
     #resume-link {
       margin-top: 30px;
+      width: 90%;
+      max-width: 800px;
     }
-    a {
-      color: #ff00ff;
-      font-size: 1.2em;
+    iframe {
+      border-radius: 8px;
+      border: 2px solid #39ff14;
     }
   </style>
 </head>
@@ -55,32 +63,12 @@
 
   <h1>🔐 TOP SECRET ACCESS</h1>
   <p>
-    Welcome, Agent.<br>
-    You have reached the restricted archive of Blare Stew.<br>
+    Welcome, Agent.<br />
+    You have reached the restricted archive of Blare Stew.<br />
     Enter the authorized access code to retrieve the dossier.
   </p>
 
-  <input type="password" id="password" placeholder="Enter Access Code">
+  <input type="password" id="password" placeholder="Enter Access Code" />
   <button onclick="revealLink()">Access Dossier</button>
 
   <div id="resume-link"></div>
-
-  <script>
-    function revealLink() {
-      const code = document.getElementById('password').value;
-      if (code === '444444') {
-        const link = document.createElement('a');
-const iframe = document.createElement('iframe');
-iframe.src = 'https://drive.google.com/file/d/17XVCOWOIoZYTAcIZOGC3rg7SncTHqT1d/view?usp=sharing'; 
-iframe.width = '100%';
-iframe.height = '600';
-iframe.style.border = '2px solid #39ff14';
-document.getElementById('resume-link').appendChild(iframe);
-      } else {
-        alert('Access Denied. Invalid code.');
-      }
-    }
-  </script>
-
-</body>
-</html>
