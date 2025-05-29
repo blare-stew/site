@@ -72,3 +72,25 @@
   <button onclick="revealLink()">Access Dossier</button>
 
   <div id="resume-link"></div>
+
+  <script>
+    function revealLink() {
+      const code = document.getElementById('password').value.trim();
+      const container = document.getElementById('resume-link');
+      container.innerHTML = ''; // Clear previous content
+
+      if (code === '444444') {
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://drive.google.com/file/d/17XVCOWOIoZYTAcIZOGC3rg7SncTHqT1d/preview';
+        iframe.width = '100%';
+        iframe.height = '700';
+        iframe.allow = 'autoplay';
+        container.appendChild(iframe);
+      } else {
+        alert('Access Denied. Invalid code.');
+      }
+    }
+  </script>
+
+</body>
+</html>
