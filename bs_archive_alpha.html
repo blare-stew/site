@@ -70,10 +70,12 @@
       const code = document.getElementById('password').value;
       if (code === '444444') {
         const link = document.createElement('a');
-        link.href = 'https://drive.google.com/file/d/17XVCOWOIoZYTAcIZOGC3rg7SncTHqT1d/view?usp=sharing'; 
-        link.target = '_blank';
-        link.innerText = '📝 Open Blare Stew Resume';
-        document.getElementById('resume-link').appendChild(link);
+const iframe = document.createElement('iframe');
+iframe.src = 'https://drive.google.com/file/d/17XVCOWOIoZYTAcIZOGC3rg7SncTHqT1d/view?usp=sharing'; 
+iframe.width = '100%';
+iframe.height = '600';
+iframe.style.border = '2px solid #39ff14';
+document.getElementById('resume-link').appendChild(iframe);
       } else {
         alert('Access Denied. Invalid code.');
       }
