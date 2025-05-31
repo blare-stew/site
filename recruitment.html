@@ -1,22 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Recruitment Entry</title>
+  <meta charset="UTF-8" />
+  <title>TOP SECRET: Blare Stew Access</title>
+  <style>
+    body {
+      background: #000;
+      color: #39ff14;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 500px;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1.1em;
+      background: #111;
+      color: #39ff14;
+      border: 2px solid #39ff14;
+      margin-top: 20px;
+      width: 220px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      margin-top: 10px;
+      background: #39ff14;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      width: 120px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <h2>Enter Access Code</h2>
+
+  <h1>🔐 TOP SECRET RECRUITMENT</h1>
+  <p>
+    Welcome, Agent.<br />
+    You have reached the restricted area of Blare Stew.<br />
+    Enter the authorized access code to proceed.
+  </p>
+
   <input type="password" id="access" placeholder="Access Code">
   <button onclick="checkPassword()">Enter</button>
 
   <script>
     function checkPassword() {
-      const password = document.getElementById("access").value;
+      const password = document.getElementById("access").value.trim();
       if (password === "B3C0M3-0N3") {
-        window.location.href = "https://blarestew.com/NDA1";
+        window.location.href = "/NDA1"; 
       } else {
-        alert("Incorrect. Try again.");
+        alert("Access Denied. Invalid code.");
       }
     }
   </script>
+
 </body>
 </html>
