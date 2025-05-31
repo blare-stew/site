@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Non-Disclosure Protocol</title>
+  <style>
+    #nextBtn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h2>Stage One: Confidentiality Protocol</h2>
+  <p>You must acknowledge and review the NDA before continuing.</p>
+  
+  <a href="https://blarestew.com/NDA2" target="_blank" id="ndaLink">Read Full NDA</a><br><br>
+  <input type="checkbox" id="confirmBox"> I have read and understood the terms.<br><br>
+  <button id="nextBtn" disabled>Proceed</button>
+
+  <script>
+    let clickedLink = false;
+    let checkedBox = false;
+
+    document.getElementById("ndaLink").addEventListener("click", () => {
+      clickedLink = true;
+      updateButton();
+    });
+
+    document.getElementById("confirmBox").addEventListener("change", (e) => {
+      checkedBox = e.target.checked;
+      updateButton();
+    });
+
+    function updateButton() {
+      document.getElementById("nextBtn").disabled = !(clickedLink && checkedBox);
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      window.location.href = "/quiz";
+    });
+  </script>
+</body>
+</html>
