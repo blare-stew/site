@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conspiracy Board</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: url('images/corkboard.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .board-container {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 120px);
+    }
+       .poster {
+  width: 360px;
+  height: 240px;
+  background-color: transparent;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+  transform: rotate(-1deg);
+  font-family: serif;
+  position: absolute;
+}
+    .post {
+  width: 60px;
+  height: 60px;
+  background-color: #fdfd96;
+  padding: 10px;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+  transform: rotate(-3deg);
+  font-family: 'Comic Sans MS', cursive;
+  position: absolute;
+}
+   .note {
+  width: 100px;
+  height: 150px;
+  background-color: transparent;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+  transform: rotate(-1deg);
+  font-family: serif;
+  position: absolute;
+}
+   .folder {
+  width: 200px;
+  height: 150px;
+  background-color: transparent;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+  font-family: serif;
+  position: absolute;
+}     
+   .transparent {
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0;
+} 
+   .pushpin {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  z-index: 5;
+  pointer-events: none;
+}
+   .string {
+  position: absolute;
+  height: 2px;
+  background: red;
+  transform-origin: left center;
+  z-index: 1;
+}
+.poster1 { top: 10%; left: 50%; background-color: transparent; transform: rotate(-1deg)}
+
+.note1 { top: 20%; left: 30%; background-color: transparent; transform: rotate(7deg)}
+.note2 { top: 25%; left: 35%; background-color: transparent; transform: rotate(2deg); }
+.note3 { top: 30%; left: 40%; background-color: transparent; transform: rotate(-6deg); }
+.note4 { top: 35%; left: 45%; background-color: transparent; transform: rotate(5deg); }
+.note5 { top: 40%; left: 50%; background-color: transparent; transform: rotate(-3deg); }
+.note6 { top: 45%; left: 55%; background-color: transparent; transform: rotate(6deg); }
+.note7 { top: 50%; left: 60%; background-color: transparent; transform: rotate(-7deg); }
+.note8 { top: 55%; left: 65%; background-color: transparent; transform: rotate(4deg); }
+.note9 { top: 60%; left: 70%; background-color: transparent; transform: rotate(2deg); }
+.note10 { top: 65%; left: 75%; background-color: transparent; transform: rotate(-5deg); }
+.note11 { top: 70%; left: 80%; background-color: transparent; transform: rotate(3deg); }
+.note12 { top: 75%; left: 85%; background-color: transparent; transform: rotate(-2deg); }
+
+.folder1 { top: 30%; left: 70%; background-color: transparent; transform: rotate(7deg); }
+
+.post1 { top: 200px; left: 150px; background-color: #ffe87c; transform: rotate(5deg); }
+.post2 { top: 500px; left: 300px; background-color: #fffdc1; transform: rotate(-6deg); }
+.post3 { top: 600px; left: 900px; background-color: #fff0a1; transform: rotate(7deg); }
+.post4 { top: 350px; left: 600px; background-color: #fff6a6; transform: rotate(-5deg); }
+.post5 { top: 150px; left: 400px; background-color: #fffaa3; transform: rotate(6deg); }
+.post6 { top: 500px; left: 1100px; background-color: #fffac5; transform: rotate(-4deg); }
+.post7 { top: 250px; left: 750px; background-color: #fdf3a1; transform: rotate(3deg); }
+    
+  </style>
+</head>
+<body>
+<div id="app">  
+  
+  <div class="board-container">
+
+    <img src="images/RedPin1.png" class="pushpin" style="top: 90px; left: 110px;">
+ </a>
+    <div class="string" style="top: 120px; left: 150px; width: 300px; transform: rotate(30deg);"></div>
+  </a>
+     <div class="poster poster1">
+  <a href="https://blarestew.com/isdead">
+     <img src="images/BlareIsDeadAbbeyRoad.png" alt="BlareIsDeadAbbeyRoad" style="width: 100%; height:100%; object-fit: fill; display: block;">
+  </a>
+</div>
+   <div class="note note1">
+  <a href="https://blarestew.com">
+     <img src="images/CLASSYINFO.png" alt="CLASSYINFO" style="width: 100%; height:100%; object-fit: fill; display: block;">
+  </a>
+</div>
+<div class="note note2">
+  <a href="https://blarestew.com/recruitment">
+     <img src="images/Cybernetic Bear Recruitment Propaganda.png" alt="Cybernetic Bear Recruitment Propaganda" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="note note3">
+  <a href="https://blarestew.com">
+        <img src="images/CLASSYINFO.png" alt="CLASSYINFO" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="note note4">
+  <a href="https://blarestew.com/bs_archive_alpha.html">
+        <img src="images/ClassifiedResume.png" alt="ClassifiedResume" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="note note5">
+  <a href="https://blarestew.com">
+        <img src="images/CLASSYINFO.png" alt="CLASSYINFO" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="note note6">
+  <a href="https://blarestew.com">
+       <img src="images/CLASSYINFO.png" alt="CLASSYINFO" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="note note7">
+  <a href="https://blarestew.com">
+        <img src="images/CLASSYINFO.png" alt="CLASSYINFO" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="note note8">
+  <a href="https://blarestew.com">
+       <img src="images/CLASSYINFO.png" alt="CLASSYINFO" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="note note9">
+  <a href="https://blarestew.com/faq">
+        <img src="images/FAQSClassified.png" alt="FAQSClassified" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="note note10">
+  <a href="https://blarestew.com/reviews.html">
+        <img src="images/ReviewsClassified.png" alt="ReviewsClassified" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="note note11">
+  <a href="https://blarestew.com/friends">
+        <img src="images/FRIENDZ.png" alt="&FRIENDZ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="note note12">
+  <a href="https://blarestew.com">
+        <img src="images/CLASSYINFO.png" alt="CLASSYINFO" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </a>
+</div>
+    <div class="folder folder1">
+  <a href="https://blarestew.com/about.html">
+        <img src="images/WhatIsBlareStewFolder.png" alt="WhatIsBlareStewFolder" style="width: 100%; height: 100%; object-fit: fill; display: block;">
+  </a>
+</div>
+    <div class="post post1">LARRY?!?!</div>
+    <div class="post post2">CLAIRE?!?!</div>
+    <div class="post post3">HARRY?!?!</div>
+    <div class="post post4">BEING SERIOUS?!?!</div>
+    <div class="post post5">[BLANK]</div>
+    <div class="post post6">[BLANK]</div>
+    <div class="post post7">[BLANK]</div>
+  </div>
+
+</body>
+</html>
