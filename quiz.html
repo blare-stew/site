@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blare Stew Recruitment Quiz</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #eee;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  h1, h2 {
+    text-align: center;
+    color: #f2a900;
+  }
+  .step {
+    display: none;
+  }
+  .step.active {
+    display: block;
+  }
+  textarea, input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0 1rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+  }
+  button {
+    background-color: #f2a900;
+    color: #121212;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0.25rem;
+  }
+  button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+  }
+  .buttons {
+    text-align: center;
+  }
+  iframe {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+  }
+</style>
+</head>
+<body>
+
+<h1>Blare Stew Recruitment</h1>
+
+<form id="recruitmentForm">
+
+  <!-- Step 1: Introduction and video -->
+  <div class="step active" id="step1">
+    <h2>Welcome!</h2>
+    <p>Watch the video below to get a feel for what Blare Stew is about.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/MAbHDA5f1NE?si=EamxDL_KfNewmBHs" 
+      title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    <label for="blareStewDescription">In your own words, what is Blare Stew?</label>
+    <textarea id="blareStewDescription" name="blareStewDescription" rows="4" required></textarea>
+  </div>
+
+  <!-- Step 2: How did you hear about us? -->
+  <div class="step" id="step2">
+    <label for="referralSource">How did you hear about Blare Stew?</label>
+    <textarea id="referralSource" name="referralSource" rows="2" required></textarea>
+  </div>
+
+  <!-- Step 3: Name / Alias -->
+  <div class="step" id="step3">
+    <label for="nameAlias">Name / Alias / Persona</label>
+    <input type="text" id="nameAlias" name="nameAlias" required />
+  </div>
+
+  <!-- Step 4: Email -->
+  <div class="step" id="step4">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required />
+  </div>
+
+  <!-- Step 5: Artistic/Performance Portfolio -->
+  <div class="step" id="step5">
+    <label for="portfolioLinks">Links to your artistic or performance work online (YouTube, Instagram, TikTok, etc.)</label>
+    <textarea id="portfolioLinks" name="portfolioLinks" rows="3" placeholder="Paste links separated by commas or line breaks" required></textarea>
+  </div>
+
+  <!-- Step 6: Why join Blare Stew? -->
+  <div class="step" id="step6">
+    <label for="whyJoin">Why do you want to join Blare Stew?</label>
+    <textarea id="whyJoin" name="whyJoin" rows="4" required></textarea>
+  </div>
+
+  <!-- Step 7: What would you contribute? -->
+  <div class="step" id="step7">
+    <label for="contributions">What can you contribute to Blare Stew?</label>
+    <textarea id="contributions" name="contributions" rows="4" required></textarea>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="buttons">
+    <button type="button" id="prevBtn" onclick="prevStep()" disabled>Back</button>
+    <button type="button" id="nextBtn" onclick="nextStep()">Next</button>
+    <button type="submit" id="submitBtn" style="display:none;">Submit</button>
+  </div>
+
+</form>
+
+<script>
+  const form = document.getElementById('recruitmentForm');
+  const steps = document.querySelectorAll('.step');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  let currentStep = 0;
+
+  function showStep(n) {
+    steps.forEach((step, i) => {
+      step.classList.toggle('active', i === n);
+    });
+
+    prevBtn.disabled = n === 0;
+    nextBtn.style.display = n === steps.length - 1 ? 'none' : 'inline-block';
+    submitBtn.style.display = n === steps.length - 1 ? 'inline-block' : 'none';
+  }
+
+  function validateStep() {
+    const currentInputs = steps[currentStep].querySelectorAll('input, textarea');
+    for (const input of currentInputs) {
+      if (!input.checkValidity()) {
+        input.reportValidity();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function nextStep() {
+    if (!validateStep()) return;
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 0) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (!validateStep()) return;
+
+    // Collect all answers into an object
+    const formData = {};
+    steps.forEach(step => {
+      const inputs = step.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        formData[input.name] = input.value.trim();
+      });
+    });
+
+    console.log('Form submission:', formData);
+    alert('Thanks for submitting! We will be in touch.');
+
+    // TODO: Send formData to Google Sheets via Google Apps Script or other backend here
+
+    form.reset();
+    currentStep = 0;
+    showStep(currentStep);
+  });
+
+  // Initialize
+  showStep(currentStep);
+</script>
+
+</body>
+</html>
