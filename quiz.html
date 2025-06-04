@@ -1,192 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blare Stew Recruitment Quiz</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #121212;
-    color: #eee;
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1rem;
-  }
-  h1, h2 {
-    text-align: center;
-    color: #f2a900;
-  }
-  .step {
-    display: none;
-  }
-  .step.active {
-    display: block;
-  }
-  textarea, input[type="text"], input[type="email"] {
-    width: 100%;
-    padding: 0.75rem;
-    margin: 0.5rem 0 1rem;
-    border-radius: 4px;
-    border: none;
-    font-size: 1rem;
-  }
-  button {
-    background-color: #f2a900;
-    color: #121212;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 0.25rem;
-  }
-  button:disabled {
-    background-color: #555;
-    cursor: not-allowed;
-  }
-  .buttons {
-    text-align: center;
-  }
-  iframe {
-    display: block;
-    margin: 1rem auto;
-    max-width: 100%;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blare Stew Recruitment Form</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: #f8f8f8;
+      padding: 2rem;
+    }
+    .form-step {
+      display: none;
+    }
+    .form-step.active {
+      display: block;
+    }
+    textarea, input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      background: #222;
+      border: 1px solid #444;
+      color: #fff;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+    }
+    .buttons {
+      margin-top: 1rem;
+    }
+    .buttons button {
+      padding: 0.5rem 1rem;
+      background: #f04;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    .checkboxes label {
+      display: flex;
+      align-items: center;
+    }
+    .checkboxes input {
+      margin-right: 0.5rem;
+    }
+  </style>
 </head>
 <body>
+  <form id="recruitmentForm">
+    <div class="form-step active">
+      <h2>How did you hear about Blare Stew?</h2>
+      <textarea name="heard_about" required></textarea>
+      <div class="buttons">
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
 
-<h1>Blare Stew Recruitment</h1>
+    <div class="form-step">
+      <h2>In your own words, what is Blare Stew?</h2>
+      <textarea name="what_is" required></textarea>
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
 
-<form id="recruitmentForm">
+    <div class="form-step">
+      <h2>What do you believe the purpose or intent of Blare Stew might be?</h2>
+      <textarea name="intent" required></textarea>
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
 
-  <!-- Step 1: Introduction and video -->
-  <div class="step active" id="step1">
-    <h2>Welcome!</h2>
-    <p>Watch the video below to get a feel for what Blare Stew is about.</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/MAbHDA5f1NE?si=EamxDL_KfNewmBHs" 
-      title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-    <label for="blareStewDescription">In your own words, what is Blare Stew?</label>
-    <textarea id="blareStewDescription" name="blareStewDescription" rows="4" required></textarea>
-  </div>
+    <div class="form-step">
+      <h2>What stuck with you the most emotionally, visually, or tonally?</h2>
+      <textarea name="stuck_with"></textarea>
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
 
-  <!-- Step 2: How did you hear about us? -->
-  <div class="step" id="step2">
-    <label for="referralSource">How did you hear about Blare Stew?</label>
-    <textarea id="referralSource" name="referralSource" rows="2" required></textarea>
-  </div>
+    <div class="form-step">
+      <h2>What did you find confusing or disorienting about the video or concept?</h2>
+      <textarea name="confusing"></textarea>
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
 
-  <!-- Step 3: Name / Alias -->
-  <div class="step" id="step3">
-    <label for="nameAlias">Name / Alias / Persona</label>
-    <input type="text" id="nameAlias" name="nameAlias" required />
-  </div>
+    <div class="form-step">
+      <h2>Name / Alias / Persona you'd like to go by</h2>
+      <input type="text" name="name_alias" required />
+      <h2>Email Address</h2>
+      <input type="email" name="email" required />
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
 
-  <!-- Step 4: Email -->
-  <div class="step" id="step4">
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" required />
-  </div>
+    <div class="form-step">
+      <h2>Drop any links to your performance/art/media work, if any</h2>
+      <textarea name="portfolio_links"></textarea>
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
 
-  <!-- Step 5: Artistic/Performance Portfolio -->
-  <div class="step" id="step5">
-    <label for="portfolioLinks">Links to your artistic or performance work online (YouTube, Instagram, TikTok, etc.)</label>
-    <textarea id="portfolioLinks" name="portfolioLinks" rows="3" placeholder="Paste links separated by commas or line breaks" required></textarea>
-  </div>
+    <div class="form-step">
+      <h2>Why do you want to be involved with Blare Stew?</h2>
+      <textarea name="why_join" required></textarea>
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
 
-  <!-- Step 6: Why join Blare Stew? -->
-  <div class="step" id="step6">
-    <label for="whyJoin">Why do you want to join Blare Stew?</label>
-    <textarea id="whyJoin" name="whyJoin" rows="4" required></textarea>
-  </div>
+    <div class="form-step">
+      <h2>What do you believe you could contribute to Blare Stew?</h2>
+      <textarea name="contribution" required></textarea>
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
 
-  <!-- Step 7: What would you contribute? -->
-  <div class="step" id="step7">
-    <label for="contributions">What can you contribute to Blare Stew?</label>
-    <textarea id="contributions" name="contributions" rows="4" required></textarea>
-  </div>
+    <div class="form-step">
+      <h2>Which of the following are you experienced in or comfortable doing?</h2>
+      <div class="checkboxes">
+        <label><input type="checkbox" name="skills" value="Performing live" /> Performing live</label>
+        <label><input type="checkbox" name="skills" value="Visual Art" /> Visual Art</label>
+        <label><input type="checkbox" name="skills" value="Filmmaking or editing" /> Filmmaking or editing</label>
+        <label><input type="checkbox" name="skills" value="Writing" /> Writing</label>
+        <label><input type="checkbox" name="skills" value="Audio production or music" /> Audio production or music</label>
+        <label><input type="checkbox" name="skills" value="Voice acting" /> Voice acting</label>
+        <label><input type="checkbox" name="skills" value="Graphic Design" /> Graphic Design</label>
+        <label><input type="checkbox" name="skills" value="Event Planning" /> Event Planning or Street Teaming</label>
+        <label><input type="checkbox" name="skills" value="Other" /> Other (explain below)</label>
+      </div>
+      <label>Other skills or areas of weirdness we should know about?</label>
+      <textarea name="other_skills"></textarea>
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
 
-  <!-- Navigation Buttons -->
-  <div class="buttons">
-    <button type="button" id="prevBtn" onclick="prevStep()" disabled>Back</button>
-    <button type="button" id="nextBtn" onclick="nextStep()">Next</button>
-    <button type="submit" id="submitBtn" style="display:none;">Submit</button>
-  </div>
+    <div class="form-step">
+      <h2>Would you be interested in being a “Stew Salesperson”?</h2>
+      <label><input type="radio" name="salesperson" value="Yes" required /> Yes, I’m into it</label><br />
+      <label><input type="radio" name="salesperson" value="Maybe" /> Maybe — depends what that means</label><br />
+      <label><input type="radio" name="salesperson" value="No" /> No, not really my vibe</label>
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
 
-</form>
+  <script>
+    const steps = document.querySelectorAll('.form-step');
+    let currentStep = 0;
 
-<script>
-  const form = document.getElementById('recruitmentForm');
-  const steps = document.querySelectorAll('.step');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const submitBtn = document.getElementById('submitBtn');
-  let currentStep = 0;
-
-  function showStep(n) {
-    steps.forEach((step, i) => {
-      step.classList.toggle('active', i === n);
-    });
-
-    prevBtn.disabled = n === 0;
-    nextBtn.style.display = n === steps.length - 1 ? 'none' : 'inline-block';
-    submitBtn.style.display = n === steps.length - 1 ? 'inline-block' : 'none';
-  }
-
-  function validateStep() {
-    const currentInputs = steps[currentStep].querySelectorAll('input, textarea');
-    for (const input of currentInputs) {
-      if (!input.checkValidity()) {
-        input.reportValidity();
-        return false;
+    function showStep(index) {
+      steps.forEach((step, i) => step.classList.toggle('active', i === index));
+    }
+    function nextStep() {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
       }
     }
-    return true;
-  }
-
-  function nextStep() {
-    if (!validateStep()) return;
-    if (currentStep < steps.length - 1) {
-      currentStep++;
-      showStep(currentStep);
+    function prevStep() {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
     }
-  }
 
-  function prevStep() {
-    if (currentStep > 0) {
-      currentStep--;
-      showStep(currentStep);
-    }
-  }
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    if (!validateStep()) return;
-
-    // Collect all answers into an object
-    const formData = {};
-    steps.forEach(step => {
-      const inputs = step.querySelectorAll('input, textarea');
-      inputs.forEach(input => {
-        formData[input.name] = input.value.trim();
-      });
+    document.getElementById('recruitmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submitted! This is where your backend logic would go.');
     });
-
-    console.log('Form submission:', formData);
-    alert('Thanks for submitting! We will be in touch.');
-
-    // TODO: Send formData to Google Sheets via Google Apps Script or other backend here
-
-    form.reset();
-    currentStep = 0;
-    showStep(currentStep);
-  });
-
-  // Initialize
-  showStep(currentStep);
-</script>
-
+  </script>
 </body>
 </html>
