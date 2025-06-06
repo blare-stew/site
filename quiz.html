@@ -244,8 +244,14 @@
   </form>
 
   <script>
-    const steps = document.querySelectorAll('.form-step');
-    let currentStep = 0;
+const steps = document.querySelectorAll('.form-step');
+let currentStep = 0;
+
+function showStep(stepIndex) {
+  steps.forEach((step, index) => {
+    step.classList.toggle('active', index === stepIndex);
+  });
+}
 
 function nextStep() {
   const inputs = steps[currentStep].querySelectorAll('textarea, input[type="text"], input[type="email"], input[type="radio"], input[type="checkbox"]');
