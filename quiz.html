@@ -244,6 +244,7 @@
   </form>
 
   <script>
+    
 const steps = document.querySelectorAll('.form-step');
 let currentStep = 0;
 
@@ -312,7 +313,6 @@ function nextStep() {
     if (response.ok) {
       alert('Form submitted successfully!');
       this.reset();
-      // Optionally send user back to first step
       currentStep = 0;
       showStep(currentStep);
     } else {
