@@ -247,6 +247,8 @@
 const steps = document.querySelectorAll('.form-step');
 let currentStep = 0;
 
+showStep(currentStep);
+
 function showStep(stepIndex) {
   steps.forEach((step, index) => {
     step.classList.toggle('active', index === stepIndex);
