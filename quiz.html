@@ -1,81 +1,164 @@
-<script>
-  const steps = document.querySelectorAll('.form-step');
-  let currentStep = 0;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blare Stew Recruitment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+      margin: 0;
+      padding: 0;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #222;
+      border-radius: 8px;
+    }
+    .form-step {
+      display: none;
+    }
+    .form-step.active {
+      display: block;
+    }
+    h2 {
+      color: #f04;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #444;
+      border-radius: 4px;
+      background-color: #333;
+      color: #eee;
+    }
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+    .buttons {
+      margin-top: 1.5rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin-right: 1rem;
+      background-color: #f04;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c03;
+    }
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <form id="recruitmentForm">
+      <!-- All your original form steps here -->
+      <!-- (Omitted here to save space - they are already perfect and unchanged) -->
 
-  showStep(currentStep);
+      <!-- ... paste all your existing form steps here ... -->
 
-  function showStep(stepIndex) {
-    steps.forEach((step, index) => {
-      step.classList.toggle('active', index === stepIndex);
-    });
-  }
+    </form>
+  </div>
 
-  function nextStep() {
-    const currentInputs = steps[currentStep].querySelectorAll('[required]');
-    let valid = true;
+  <script>
+    const steps = document.querySelectorAll('.form-step');
+    let currentStep = 0;
 
-    currentInputs.forEach(input => {
-      if (input.type === 'radio' || input.type === 'checkbox') {
-        const group = steps[currentStep].querySelectorAll(`[name="${input.name}"]`);
-        const oneChecked = Array.from(group).some(el => el.checked);
-        if (!oneChecked) valid = false;
-      } else {
-        if (!input.value.trim()) valid = false;
-      }
-    });
+    showStep(currentStep);
 
-    if (!valid) {
-      alert('Please fill out the required fields before continuing.');
-      return;
+    function showStep(stepIndex) {
+      steps.forEach((step, index) => {
+        step.classList.toggle('active', index === stepIndex);
+      });
     }
 
-    if (currentStep < steps.length - 1) {
-      currentStep++;
-      showStep(currentStep);
-    }
-  }
+    function nextStep() {
+      const currentInputs = steps[currentStep].querySelectorAll('[required]');
+      let valid = true;
 
-  function prevStep() {
-    if (currentStep > 0) {
-      currentStep--;
-      showStep(currentStep);
-    }
-  }
-
-  document.getElementById('recruitmentForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const data = {};
-
-    // Collect all relevant inputs
-    this.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach(input => {
-      data[input.name] = input.value || '';
-    });
-
-    // Gather all checked checkboxes for 'skills'
-    const skillCheckboxes = this.querySelectorAll('input[name="skills"]:checked');
-    data['skills'] = Array.from(skillCheckboxes).map(cb => cb.value).join(', ');
-
-    // Get selected radio for 'salesperson'
-    const salesperson = this.querySelector('input[name="salesperson"]:checked');
-    data['salesperson'] = salesperson ? salesperson.value : '';
-
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwsCQ8dgQaghnfCDc5SrDCMrznafZ8nyhMAGenKwNJ8nzCvLTfh9zTw_YH9SUzrMAjE/exec', {
-        method: 'POST',
-        body: new URLSearchParams(data)
+      currentInputs.forEach(input => {
+        if (input.type === 'radio' || input.type === 'checkbox') {
+          const group = steps[currentStep].querySelectorAll(`[name="${input.name}"]`);
+          const oneChecked = Array.from(group).some(el => el.checked);
+          if (!oneChecked) valid = false;
+        } else {
+          if (!input.value.trim()) valid = false;
+        }
       });
 
-      if (response.ok) {
-        alert('Form submitted successfully!');
-        this.reset();
-        currentStep = 0;
-        showStep(currentStep);
-      } else {
-        alert('Submission failed, please try again.');
+      if (!valid) {
+        alert('Please fill out the required fields before continuing.');
+        return;
       }
-    } catch (error) {
-      alert('Error submitting form: ' + error.message);
+
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      }
     }
-  });
-</script>
+
+    function prevStep() {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+    document.getElementById('recruitmentForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const data = {};
+
+      // Collect all relevant inputs
+      this.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach(input => {
+        data[input.name] = input.value || '';
+      });
+
+      // Gather all checked checkboxes for 'skills'
+      const skillCheckboxes = this.querySelectorAll('input[name="skills"]:checked');
+      data['skills'] = Array.from(skillCheckboxes).map(cb => cb.value).join(', ');
+
+      // Get selected radio for 'salesperson'
+      const salesperson = this.querySelector('input[name="salesperson"]:checked');
+      data['salesperson'] = salesperson ? salesperson.value : '';
+
+      try {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbwsCQ8dgQaghnfCDc5SrDCMrznafZ8nyhMAGenKwNJ8nzCvLTfh9zTw_YH9SUzrMAjE/exec', {
+          method: 'POST',
+          body: new URLSearchParams(data)
+        });
+
+        if (response.ok) {
+          alert('Form submitted successfully!');
+          this.reset();
+          currentStep = 0;
+          showStep(currentStep);
+        } else {
+          alert('Submission failed, please try again.');
+        }
+      } catch (error) {
+        alert('Error submitting form: ' + error.message);
+      }
+    });
+  </script>
+</body>
+</html>
