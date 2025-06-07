@@ -71,8 +71,126 @@
 <body>
   <div class="form-container">
     <form id="recruitmentForm">
-      <!-- Steps omitted for brevity (unchanged from your original) -->
-      <!-- ... -->
+      <!-- Step 1: Introduction -->
+      <div class="form-step active">
+        <h2>Welcome to The Initiation</h2>
+        <p>Now it’s time to go deeper into the Stew. Watch this video, then answer what you can. This is not a test. it’s a filtration system.</p>
+        <iframe src="https://www.youtube.com/embed/MAbHDA5f1NE?si=EamxDL_KfNewmBHs" title="Blare Stew: What Is It?" allowfullscreen></iframe>
+        <div class="buttons">
+          <button type="button" onclick="nextStep()">Begin</button>
+        </div>
+      </div>
+
+      <!-- Step 2: How did you hear about Blare Stew and/or St3W?? Inc.? -->
+      <div class="form-step">
+        <h2>How did you hear about Blare Stew and/or St3W?? Inc.?</h2>
+        <label for="heard_about">Your answer:</label>
+        <textarea id="heard_about" name="heard_about" required></textarea>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 3: In your own words, what is Blare Stew? -->
+      <div class="form-step">
+        <h2>In your own words, what is Blare Stew?</h2>
+        <label for="what_is">Your answer:</label>
+        <textarea id="what_is" name="what_is" required></textarea>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 4: What do you believe the purpose or intent of Blare Stew might be? -->
+      <div class="form-step">
+        <h2>What do you believe the purpose or intent of Blare Stew might be?</h2>
+        <label for="purpose">Your answer:</label>
+        <textarea id="purpose" name="purpose" required></textarea>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 5: What stuck with you the most emotionally, visually, or tonally? -->
+      <div class="form-step">
+        <h2>What stuck with you the most emotionally, visually, or tonally?</h2>
+        <label for="stuck_with_you">Your answer:</label>
+        <textarea id="stuck_with_you" name="stuck_with_you"></textarea>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 6: What did you find confusing or disorienting about the video or concept? -->
+      <div class="form-step">
+        <h2>What did you find confusing or disorienting about the video or concept?</h2>
+        <label for="confusing">Your answer:</label>
+        <textarea id="confusing" name="confusing"></textarea>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 7: Name / Alias / Persona you'd like to go by -->
+      <div class="form-step">
+        <h2>Name / Alias / Persona you'd like to go by</h2>
+        <label for="alias">Your answer:</label>
+        <input type="text" id="alias" name="alias" required>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 8: Email Address -->
+      <div class="form-step">
+        <h2>Email Address</h2>
+        <label for="email">Your email:</label>
+        <input type="email" id="email" name="email" required>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 9: Drop any links to your performance/art/media work, if any -->
+      <div class="form-step">
+        <h2>Drop any links to your performance/art/media work, if any</h2>
+        <label for="links">Your answer:</label>
+        <textarea id="links" name="links"></textarea>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 10: Why do you want to be involved with St3W?? Inc.? -->
+      <div class="form-step">
+        <h2>Why do you want to be involved with St3W?? Inc.?</h2>
+        <label for="why_involved">Your answer:</label>
+        <textarea id="why_involved" name="why_involved" required></textarea>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 11: What do you believe you could contribute to St3W?? Inc.? -->
+      <div class="form-step">
+        <h2>What do you believe you could contribute to St3W Inc.?</h2>
+        <label for="contribute">Your answer:</label>
+        <textarea id="contribute" name="contribute" required></textarea>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
       <!-- Step 12: Which of the following are you experienced in or comfortable doing? -->
       <div class="form-step">
         <h2>Which of the following are you experienced in or comfortable doing?</h2>
@@ -90,7 +208,29 @@
           <button type="button" onclick="nextStep()">Next</button>
         </div>
       </div>
-      <!-- ... (rest of your steps unchanged) ... -->
+
+      <!-- Step 13: Other skills or areas of weirdness we should know about? -->
+      <div class="form-step">
+        <h2>Other skills or areas of weirdness we should know about?</h2>
+        <label for="other_skills">Your answer:</label>
+        <textarea id="other_skills" name="other_skills"></textarea>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 14: Would you be interested in being a Stew Salesperson? -->
+      <div class="form-step">
+        <h2>Would you be interested in being a Stew Salesperson?</h2>
+        <label><input type="radio" name="salesperson" value="Yes" required /> Yes, I’m into it</label><br />
+        <label><input type="radio" name="salesperson" value="Maybe" /> Maybe — depends what that means</label><br />
+        <label><input type="radio" name="salesperson" value="No" /> No, not really my vibe</label>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+      </div>
 
       <div class="form-step">
         <h2>Anything else you'd like us to know?</h2>
@@ -157,16 +297,16 @@
 
       const data = {};
 
-      // Collect all text, email, textarea fields (even if empty)
+      // Get all text, email, textarea fields (even if left blank)
       this.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach(input => {
         data[input.name] = input.value || '';
       });
 
-      // Collect all checked checkboxes for 'skills'
+      // Gather all checked checkboxes for 'skills'
       const skillCheckboxes = this.querySelectorAll('input[name="skills"]:checked');
       data['skills'] = Array.from(skillCheckboxes).map(cb => cb.value).join(', ');
 
-      // Collect selected radio button for 'salesperson'
+      // Get selected radio for 'salesperson'
       const salesperson = this.querySelector('input[type="radio"][name="salesperson"]:checked');
       data['salesperson'] = salesperson ? salesperson.value : '';
 
