@@ -5,18 +5,25 @@
   <title>Blare Stew Recruitment Form</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #eee;
+      background: #000;
+      color: #39ff14;
+      font-family: 'Courier New', Courier, monospace;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: flex-start;
     }
     .form-container {
       max-width: 600px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: #222;
+      background-color: #111;
       border-radius: 8px;
+      box-shadow: 0 0 20px #39ff1440, 0 0 3px #39ff14;
+      width: 100%;
     }
     .form-step {
       display: none;
@@ -25,53 +32,107 @@
       display: block;
     }
     h2 {
-      color: #f04;
+      color: #39ff14;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      text-align: center;
+      font-size: 1.7em;
+    }
+    p {
+      font-size: 1.2em;
+      max-width: 500px;
+      text-align: center;
+      line-height: 1.4;
+      margin: 0 auto 1.2em auto;
+      color: #39ff14;
     }
     label {
       display: block;
-      margin: 1rem 0 0.5rem;
+      margin: 1rem 0 0.5rem 0;
+      font-size: 1.1em;
+      color: #39ff14;
     }
     input[type="text"],
     input[type="email"],
     textarea {
       width: 100%;
       padding: 0.5rem;
-      border: 1px solid #444;
+      border: 2px solid #39ff14;
       border-radius: 4px;
-      background-color: #333;
-      color: #eee;
+      background-color: #111;
+      color: #39ff14;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1em;
+      margin-bottom: 1em;
+      box-sizing: border-box;
+      outline: none;
+      transition: border 0.2s;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border: 2px solid #f04;
     }
     input[type="checkbox"],
     input[type="radio"] {
+      accent-color: #39ff14;
       margin-right: 0.5rem;
+    }
+    .banner-img {
+      display: block;
+      margin: 1.5em auto 1em auto;
+      width: 30%;
+      max-width: 100%;
     }
     .buttons {
       margin-top: 1.5rem;
+      text-align: center;
     }
     button {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.2rem;
       margin-right: 1rem;
-      background-color: #f04;
-      color: #fff;
+      background: #39ff14;
+      color: #000;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: background 0.2s, color 0.2s;
+      font-family: 'Courier New', Courier, monospace;
+      box-shadow: 0 0 10px #39ff1420;
     }
     button:hover {
-      background-color: #c03;
+      background: #222;
+      color: #39ff14;
+      border: 2px solid #39ff14;
     }
     iframe {
       width: 100%;
       height: 315px;
-      border: none;
+      border: 2px solid #39ff14;
+      border-radius: 6px;
       margin-bottom: 1rem;
+      background: #000;
+      box-shadow: 0 0 10px #39ff1440;
+    }
+    @media (max-width: 700px) {
+      .form-container {
+        padding: 1rem;
+      }
+      iframe {
+        height: 200px;
+      }
+      .banner-img {
+        width: 60%;
+      }
     }
   </style>
 </head>
 <body>
   <div class="form-container">
     <form id="recruitmentForm">
-      <!-- Step 1: Introduction -->
+      <!-- Step 1: Introduction (with video) -->
       <div class="form-step active">
         <h2>Welcome to The Initiation</h2>
         <p>Now it’s time to go deeper into the Stew. Watch this video, then answer what you can. This is not a test. it’s a filtration system.</p>
@@ -83,6 +144,10 @@
 
       <!-- Step 2: How did you hear about Blare Stew and/or St3W?? Inc.? -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>How did you hear about Blare Stew and/or St3W?? Inc.?</h2>
         <label for="heard_about">Your answer:</label>
         <textarea id="heard_about" name="heard_about" required></textarea>
@@ -94,6 +159,10 @@
 
       <!-- Step 3: In your own words, what is Blare Stew? -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>In your own words, what is Blare Stew?</h2>
         <label for="what_is">Your answer:</label>
         <textarea id="what_is" name="what_is" required></textarea>
@@ -105,6 +174,10 @@
 
       <!-- Step 4: What do you believe the purpose or intent of Blare Stew might be? -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>What do you believe the purpose or intent of Blare Stew might be?</h2>
         <label for="purpose">Your answer:</label>
         <textarea id="purpose" name="purpose" required></textarea>
@@ -116,6 +189,10 @@
 
       <!-- Step 5: What stuck with you the most emotionally, visually, or tonally? -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>What stuck with you the most emotionally, visually, or tonally?</h2>
         <label for="stuck_with_you">Your answer:</label>
         <textarea id="stuck_with_you" name="stuck_with_you"></textarea>
@@ -127,6 +204,10 @@
 
       <!-- Step 6: What did you find confusing or disorienting about the video or concept? -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>What did you find confusing or disorienting about the video or concept?</h2>
         <label for="confusing">Your answer:</label>
         <textarea id="confusing" name="confusing"></textarea>
@@ -138,6 +219,10 @@
 
       <!-- Step 7: Name / Alias / Persona you'd like to go by -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>Name / Alias / Persona you'd like to go by</h2>
         <label for="alias">Your answer:</label>
         <input type="text" id="alias" name="alias" required>
@@ -149,6 +234,10 @@
 
       <!-- Step 8: Email Address -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>Email Address</h2>
         <label for="email">Your email:</label>
         <input type="email" id="email" name="email" required>
@@ -160,6 +249,10 @@
 
       <!-- Step 9: Drop any links to your performance/art/media work, if any -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>Drop any links to your performance/art/media work, if any</h2>
         <label for="links">Your answer:</label>
         <textarea id="links" name="links"></textarea>
@@ -171,6 +264,10 @@
 
       <!-- Step 10: Why do you want to be involved with St3W?? Inc.? -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>Why do you want to be involved with St3W?? Inc.?</h2>
         <label for="why_involved">Your answer:</label>
         <textarea id="why_involved" name="why_involved" required></textarea>
@@ -182,6 +279,10 @@
 
       <!-- Step 11: What do you believe you could contribute to St3W?? Inc.? -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>What do you believe you could contribute to St3W Inc.?</h2>
         <label for="contribute">Your answer:</label>
         <textarea id="contribute" name="contribute" required></textarea>
@@ -193,6 +294,10 @@
 
       <!-- Step 12: Which of the following are you experienced in or comfortable doing? -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>Which of the following are you experienced in or comfortable doing?</h2>
         <label><input type="checkbox" name="skills" value="Performing live"> Performing live</label>
         <label><input type="checkbox" name="skills" value="Visual Art"> Visual Art</label>
@@ -211,6 +316,10 @@
 
       <!-- Step 13: Other skills or areas of weirdness we should know about? -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>Other skills or areas of weirdness we should know about?</h2>
         <label for="other_skills">Your answer:</label>
         <textarea id="other_skills" name="other_skills"></textarea>
@@ -222,6 +331,10 @@
 
       <!-- Step 14: Would you be interested in being a Stew Salesperson? -->
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>Would you be interested in being a Stew Salesperson?</h2>
         <label><input type="radio" name="salesperson" value="Yes" required /> Yes, I’m into it</label><br />
         <label><input type="radio" name="salesperson" value="Maybe" /> Maybe — depends what that means</label><br />
@@ -233,6 +346,10 @@
       </div>
 
       <div class="form-step">
+        <img 
+          src="images/St3WIncBannerGif.gif" 
+          alt="Banner" 
+          class="banner-img">
         <h2>Anything else you'd like us to know?</h2>
         <label for="final_notes">Your answer:</label>
         <textarea id="final_notes" name="final_notes"></textarea>
@@ -243,7 +360,6 @@
       </div>
     </form>
   </div>
-
   <script>
     const steps = document.querySelectorAll('.form-step');
     let currentStep = 0;
