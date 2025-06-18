@@ -7,6 +7,6 @@
   },
   "devDependencies": {
     "serve": "^11.2.0",
-    "surge": "^0.21.3"
+    "surge": "^0.24.6"
   }
 }
