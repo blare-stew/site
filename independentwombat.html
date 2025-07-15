@@ -1,4 +1,4 @@
- <head>
+<head>
   <title>Blare Stew</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
@@ -25,20 +25,40 @@
       height: 100%;
       border: 0;
     }
+
+    .link-buttons {
+      margin-top: 1em;
+    }
+
+    .link-buttons a {
+      display: inline-block;
+      margin: 0.5em 1em 0 0;
+      padding: 0.5em 1em;
+      background-color: #222;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .link-buttons a:hover {
+      background-color: #444;
+    }
   </style>
 </head>
 <body>
-<div id="app">
-  <header>
-    <h1><a href='/'>BLARE!!! StEW??</a></h1>
-    </nav>
-  </header>
-  <article>
-    <p><img src="/images/BlarenWombatMother.png" alt="Blaren Wombat Mother" /></p>
-    </div>
-<a href="https://blarestew.com/MansMan">MORE INFO?</a>
-<a href="https://blarestew.com/contacts">HELP NOW!!</a>
-  </article>
-</div>
-<script src="/space/can.js"></script>
+  <div id="app">
+    <header>
+      <h1><a href="/">BLARE!!! StEW??</a></h1>
+    </header>
+    <article>
+      <p><img src="/images/BlarenWombatMother.png" alt="Blaren Wombat Mother" /></p>
+
+      <div class="link-buttons">
+        <a href="https://blarestew.com/MansMan">MORE INFO?</a>
+        <a href="https://blarestew.com/contacts">HELP NOW!!</a>
+      </div>
+    </article>
+  </div>
+  <script src="/space/can.js"></script>
 </body>
