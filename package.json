@@ -6,7 +6,7 @@
     "deploy": "surge site blarestew.surge.sh"
   },
   "devDependencies": {
-    "serve": "^11.2.0",
+    "serve": "^14.2.6",
     "surge": "^0.27.3"
   }
 }
